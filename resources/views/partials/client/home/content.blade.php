@@ -8,6 +8,6 @@
           </div>
         </div>
       </div>
-      @yield('home-content-section')
+      {{ $data }}
     </div>
 </div>
