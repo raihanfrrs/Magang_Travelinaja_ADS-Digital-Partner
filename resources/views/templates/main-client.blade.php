@@ -22,11 +22,9 @@
 <body>
     @include('partials.client.navbar')
 
-    @if (request()->is('home'))
-        @include('partials.client.home.hero')
+    @yield('section')
 
-        @include('partials.client.home.content')
-    @endif
+    @include('partials.client.footer')
 
     <!-- VENDOR JS -->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
