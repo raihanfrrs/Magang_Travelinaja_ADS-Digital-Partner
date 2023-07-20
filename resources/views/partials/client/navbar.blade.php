@@ -11,7 +11,11 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/deals">Deals</a></li>
                         <li><a href="/reservation">Reservation</a></li>
+                        @guest
                         <li><a href="/sign-in">Sign-in</a></li>
+                        @else
+                        <li><a href="/sign-out">Sign-out</a></li>
+                        @endguest
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>

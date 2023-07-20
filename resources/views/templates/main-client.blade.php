@@ -9,6 +9,7 @@
     <title>Travelinaja - </title>
 
     <!-- VENDOR CSS -->
+    <link href="{{ asset('vendor/sweetalert2/css/sweetalert2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/swiper/css/unpkg.com_swiper@7.4.1_swiper-bundle.min.css') }}" rel="stylesheet">
 
@@ -17,10 +18,15 @@
     <link rel="stylesheet" href="{{ asset('assets/client/css/templatemo-woox-travel.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/client/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/client/css/animate.css') }}">
+
+    <!-- VENDOR JS -->
+    <script src="{{ asset('vendor/sweetalert2/js/sweetalert2.min.js') }}"></script>
 </head>
 
 <body>
     @include('partials.client.navbar')
+
+    @include('partials.flasher')
 
     @yield('section')
 
@@ -33,9 +39,9 @@
     <!-- MAIN JS -->
     <script src="{{ asset('assets/client/js/isotope.min.js') }}"></script>
     <script src="{{ asset('assets/client/js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('assets/client/js/wow.js') }}"></script>
     <script src="{{ asset('assets/client/js/tabs.js') }}"></script>
     <script src="{{ asset('assets/client/js/popup.js') }}"></script>
     <script src="{{ asset('assets/client/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/client/js/index.js') }}"></script>
 </body>
 </html>

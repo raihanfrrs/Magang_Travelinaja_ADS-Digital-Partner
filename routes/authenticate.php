@@ -14,15 +14,17 @@ Route::controller(LayoutController::class)->group(function () {
 Route::middleware('guest')->group(function () {
     Route::controller(LoginController::class)->group(function () {
         Route::get('sign-in', 'index');
+        Route::post('sign-in', 'cekLogin');
     });
 
     Route::controller(RegisterController::class)->group(function () {
         Route::get('sign-up', 'index');
+        Route::post('sign-up', 'store');
     });
 });
 
 Route::middleware('auth')->group(function () {
     Route::controller(LogoutController::class)->group(function () {
-        Route::get('logout', 'index');
+        Route::get('sign-out', 'index');
     });
 });
