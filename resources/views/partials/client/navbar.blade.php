@@ -11,7 +11,7 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/deals">Deals</a></li>
                         <li><a href="/reservation">Reservation</a></li>
-                        <li><a href="/signin">Sign-in</a></li>
+                        <li><a href="/sign-in">Sign-in</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>

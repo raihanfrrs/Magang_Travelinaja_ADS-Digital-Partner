@@ -1,25 +1,28 @@
 <?php 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LayoutController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegisterController;
 
 
 Route::controller(LayoutController::class)->group(function () {
     Route::get('/', 'index')->name('/');
 });
 
-// Route::middleware('guest')->group(function () {
-//     Route::controller(LoginController::class)->group(function () {
-//         Route::post('login', 'cekLogin');
-//     });
+Route::middleware('guest')->group(function () {
+    Route::controller(LoginController::class)->group(function () {
+        Route::get('sign-in', 'index');
+    });
 
-//     Route::controller(RegisterController::class)->group(function () {
-//         Route::post('register', 'store');
-//     });
-// });
+    Route::controller(RegisterController::class)->group(function () {
+        Route::get('sign-up', 'index');
+    });
+});
 
-// Route::middleware('auth')->group(function () {
-//     Route::controller(LogoutController::class)->group(function () {
-//         Route::get('logout', 'index');
-//     });
-// });
+Route::middleware('auth')->group(function () {
+    Route::controller(LogoutController::class)->group(function () {
+        Route::get('logout', 'index');
+    });
+});
