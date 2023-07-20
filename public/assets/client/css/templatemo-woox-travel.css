@@ -362,20 +362,11 @@ Header Style
 }
 
 .header-area .main-nav .logo {
+  font-size: 25px;
+  color: #fff;
   flex-basis: 30%;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.header-area .main-nav .logo img {
-  width: 159px;
   margin-top: 15px;
-}
-
-.background-header .main-nav .logo img {
-  width: 159px;
+  font-weight: bold;
 }
 
 .header-area .main-nav .nav {
