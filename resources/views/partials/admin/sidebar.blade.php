@@ -46,7 +46,7 @@
             <li class="sidebar-item {{ request()->is('country', 'country/*') ? 'selected' : '' }}">
             <a class="sidebar-link {{ request()->is('country', 'country/*') ? 'active' : '' }}" href="/country" aria-expanded="false">
                 <span>
-                <i class="ti ti-thought"></i>
+                <i class="ti ti-map"></i>
                 </span>
                 <span class="hide-menu">Country</span>
             </a>
@@ -54,7 +54,7 @@
             <li class="sidebar-item {{ request()->is('deals', 'deals/*') ? 'selected' : '' }}">
                 <a class="sidebar-link {{ request()->is('deals', 'deals/*') ? 'active' : '' }}" href="/deals" aria-expanded="false">
                     <span>
-                    <i class="ti ti-typography"></i>
+                    <i class="ti ti-article"></i>
                     </span>
                     <span class="hide-menu">Deals</span>
                 </a>
@@ -68,7 +68,7 @@
             <li class="sidebar-item {{ request()->is('reporting/sales', 'reporting/sales/*') ? 'selected' : '' }}">
                 <a class="sidebar-link {{ request()->is('reporting/sales', 'reporting/sales/*') ? 'active' : '' }}" href="/reporting/sales" aria-expanded="false">
                     <span>
-                    <i class="ti ti-bar-chart-alt"></i>
+                    <i class="ti ti-file-description"></i>
                     </span>
                     <span class="hide-menu">Sales</span>
                 </a>
@@ -76,7 +76,7 @@
             <li class="sidebar-item {{ request()->is('reporting/reservation', 'reporting/reservation/*') ? 'selected' : '' }}">
                 <a class="sidebar-link {{ request()->is('reporting/reservation', 'reporting/reservation/*') ? 'active' : '' }}" href="/reporting/reservation" aria-expanded="false">
                     <span>
-                    <i class="ti ti-map-alt"></i>
+                    <i class="ti ti-file-description"></i>
                     </span>
                     <span class="hide-menu">Reservation</span>
                 </a>

@@ -8,6 +8,6 @@ class MasterController extends Controller
 {
     public function index_city()
     {
-        return view()
+        return view('admin.master.city.index');
     }
 }
