@@ -11,6 +11,8 @@
 
    <!-- VENDOR CSS -->
    <link href="{{ asset('vendor/sweetalert2/css/sweetalert2.min.css') }}" rel="stylesheet">
+   <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+   <link href="{{ asset('assets/admin/libs/datatables/css/datatables.min.css') }}" rel="stylesheet">
 
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="{{ asset('assets/admin/css/styles.min.css') }}" />
@@ -51,7 +53,10 @@
     @auth
     <script src="{{ asset('assets/admin/js/sidebarmenu.js') }}"></script>
     <script src="{{ asset('assets/admin/js/app.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/datatables.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/preview.js') }}"></script>
     <script src="{{ asset('assets/admin/libs/simplebar/dist/simplebar.js') }}"></script>
+    <script src="{{ asset('assets/admin/libs/datatables/js/datatables.min.js') }}"></script>
 
     @if (request()->is('/'))
         <script src="{{ asset('assets/admin/js/dashboard.js') }}"></script>
