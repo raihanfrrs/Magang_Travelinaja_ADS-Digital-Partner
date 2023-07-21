@@ -1,4 +1,17 @@
 $(document).ready(function () {
+    $('#dataUser').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '/dataUser',
+        columns: [
+            { data: 'id', name: 'id', class: 'text-center' },
+            { data: 'name', name: 'name', class: 'text-center text-capitalize' },
+            { data: 'email', name: 'email', class: 'text-center' },
+            { data: 'phone', name: 'phone', class: 'text-center' },
+            { data: 'action', name: 'action', class: 'text-center' }
+        ]
+    });
+
     $('#dataCity').DataTable({
         processing: true,
         serverSide: true,

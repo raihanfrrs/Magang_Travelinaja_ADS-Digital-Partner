@@ -10,8 +10,12 @@ class Admin extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $guarded = [
-        'id'
+    protected $fillable = [
+        'user_id',
+        'name',
+        'email',
+        'phone',
+        'image',
     ];
 
     public function getRouteKeyName() {
@@ -29,6 +33,6 @@ class Admin extends Model
 
     public function user()
     {
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(User::class);
     }
 }
