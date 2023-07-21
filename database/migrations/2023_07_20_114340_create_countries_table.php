@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('continent');
             $table->double('population');
             $table->double('territory');
-            $table->bigInteger('avg_price')->nullable();
+            $table->double('avg_price')->nullable();
+            $table->text('description');
             $table->string('image');
             $table->timestamps();
         });

@@ -30,6 +30,7 @@ class CountryController extends Controller
                 'continent' => 'required|min:2|max:255',
                 'population' => 'required|numeric',
                 'territory' => 'required',
+                'description' => 'required',
                 'image' => 'image|file|max:2048',
             ])->validate();
         
@@ -76,6 +77,7 @@ class CountryController extends Controller
                 'continent' => 'required',
                 'population' => 'required|numeric',
                 'territory' => 'required',
+                'description' => 'required',
                 'image' => 'image|file|max:2048',
             ];
 
@@ -108,6 +110,36 @@ class CountryController extends Controller
                 'position' => 'center',
                 'type' => 'error',
                 'message' => 'Update Country Failed!'
+            ]);
+        }
+    }
+
+    public function show(Country $country)
+    {
+        return view('admin.master.country.show-country', [
+            'country' => $country
+        ]);
+    }
+
+    public function destroy(Country $country)
+    {
+        try {
+            $country->delete();
+        
+            return redirect()->intended('/country')->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'success',
+                'message' => 'Delete Country Success!'
+            ]);
+        } catch (\Exception $e) {
+            return back()->withInput()->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'error',
+                'message' => 'Delete Country Failed!'
             ]);
         }
     }

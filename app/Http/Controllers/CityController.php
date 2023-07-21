@@ -42,6 +42,10 @@ class CityController extends Controller
             $validatedData['slug'] = slug($request->name);
         
             City::create($validatedData);
+
+            $avg_price = City::select(City::raw('AVG(price) as avg_price'))->where('country_id', $request->country_id)->first();
+
+            Country::whereId($request->country_id)->update(['avg_price' => $avg_price->avg_price]);
         
             return redirect()->intended('/city/add')->with([
                 'flash-type' => 'sweetalert',
@@ -95,6 +99,10 @@ class CityController extends Controller
 
             $city->update($validatedData);
 
+            $avg_price = City::select(City::raw('AVG(price) as avg_price'))->where('country_id', $request->country_id)->first();
+
+            Country::whereId($request->country_id)->update(['avg_price' => $avg_price->avg_price]);
+
             return redirect('/city')->with([
                 'flash-type' => 'sweetalert',
                 'case' => 'default',
@@ -120,6 +128,29 @@ class CityController extends Controller
         return view('admin.master.city.show-city', [
             'city' => $city
         ]);
+    }
+
+    public function destroy(City $city)
+    {
+        try {
+            $city->delete();
+        
+            return redirect()->intended('/city')->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'success',
+                'message' => 'Delete City Success!'
+            ]);
+        } catch (\Exception $e) {
+            return back()->withInput()->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'error',
+                'message' => 'Delete City Failed!'
+            ]);
+        }
     }
 
     public function dataCity()

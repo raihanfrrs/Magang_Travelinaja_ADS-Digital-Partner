@@ -131,4 +131,27 @@ class AdminController extends Controller
         ->rawColumns(['action'])
         ->make(true);
     }
+
+    public function destroy(Admin $user)
+    {
+        try {
+            $user->delete();
+        
+            return redirect()->intended('/user')->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'success',
+                'message' => 'Delete User Success!'
+            ]);
+        } catch (\Exception $e) {
+            return back()->withInput()->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'error',
+                'message' => 'Delete User Failed!'
+            ]);
+        }
+    }
 }

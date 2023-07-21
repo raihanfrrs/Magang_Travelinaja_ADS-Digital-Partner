@@ -10,6 +10,10 @@ class Country extends Model
 {
     use HasFactory, Sluggable;
 
+    protected $guarded = [
+        'id'
+    ];
+
     public function getRouteKeyName() {
         return 'slug';
     }
@@ -22,10 +26,6 @@ class Country extends Model
             ]
         ];
     }
-
-    protected $guarded = [
-        'id'
-    ];
 
     public function city()
     {

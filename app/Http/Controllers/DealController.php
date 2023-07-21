@@ -102,6 +102,29 @@ class DealController extends Controller
         }
     }
 
+    public function destroy(Deal $deal)
+    {
+        try {
+            $deal->delete();
+        
+            return redirect()->intended('/deal')->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'success',
+                'message' => 'Delete Deal Success!'
+            ]);
+        } catch (\Exception $e) {
+            return back()->withInput()->with([
+                'flash-type' => 'sweetalert',
+                'case' => 'default',
+                'position' => 'center',
+                'type' => 'error',
+                'message' => 'Delete Deal Failed!'
+            ]);
+        }
+    }
+
     public function dataDeal()
     {
         return DataTables::of(Deal::all())

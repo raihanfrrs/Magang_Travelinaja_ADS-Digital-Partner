@@ -1,0 +1,1 @@
+@rupiah($model->avg_price)
