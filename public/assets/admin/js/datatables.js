@@ -34,6 +34,9 @@ $(document).ready(function () {
             { data: 'id', name: 'id', class: 'text-center' },
             { data: 'name', name: 'name', class: 'text-center text-capitalize' },
             { data: 'continent', name: 'continent', class: 'text-center text-capitalize' },
+            { data: 'population', name: 'population', class: 'text-center' },
+            { data: 'territory', name: 'territory', class: 'text-center' },
+            { data: 'avg_price', name: 'avg_price', class: 'text-center' },
             { data: 'action', name: 'action', class: 'text-center' }
         ]
     });

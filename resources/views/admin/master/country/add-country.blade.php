@@ -28,6 +28,22 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="population" class="form-label">Population <span class="text-danger"><sup>/ Million</sup></span></label>
+                    <input type="text" class="form-control @error('population') is-invalid @enderror" id="population" name="population" value="{{ old('population') }}" autocomplete="off" required>
+                    @error('population')
+                      <div class="form-text invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="territory" class="form-label">Territory <span class="text-danger"><sup>/ KM2</sup></span></label>
+                    <input type="text" class="form-control @error('territory') is-invalid @enderror" id="territory" name="territory" value="{{ old('territory') }}" autocomplete="off" required>
+                    @error('Territory')
+                      <div class="form-text invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
                     @error('image')

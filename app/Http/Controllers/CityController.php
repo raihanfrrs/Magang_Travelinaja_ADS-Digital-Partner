@@ -115,6 +115,13 @@ class CityController extends Controller
         }
     }
 
+    public function show(City $city)
+    {
+        return view('admin.master.city.show-city', [
+            'city' => $city
+        ]);
+    }
+
     public function dataCity()
     {
         return DataTables::of(City::all())

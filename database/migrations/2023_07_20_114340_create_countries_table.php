@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('slug');
             $table->string('continent');
+            $table->double('population');
+            $table->double('territory');
+            $table->bigInteger('avg_price')->nullable();
             $table->string('image');
             $table->timestamps();
         });

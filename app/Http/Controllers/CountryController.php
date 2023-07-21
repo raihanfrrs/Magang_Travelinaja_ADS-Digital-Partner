@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -27,6 +28,8 @@ class CountryController extends Controller
             $validatedData = Validator::make($request->all(), [
                 'name' => 'required|min:2|max:255|unique:countries',
                 'continent' => 'required|min:2|max:255',
+                'population' => 'required|numeric',
+                'territory' => 'required',
                 'image' => 'image|file|max:2048',
             ])->validate();
         
@@ -71,6 +74,8 @@ class CountryController extends Controller
             $rules = [
                 'name' => 'required|min:2|max:255|unique:countries,name,' . $country->id,
                 'continent' => 'required',
+                'population' => 'required|numeric',
+                'territory' => 'required',
                 'image' => 'image|file|max:2048',
             ];
 
@@ -110,6 +115,9 @@ class CountryController extends Controller
     public function dataCountry()
     {
         return DataTables::of(Country::all())
+        ->addColumn('avg_price', function ($model) {
+            return view('admin.master.country.data-avg-price', compact('model'))->render();
+        })
         ->addColumn('action', function ($model) {
             return view('admin.master.country.form-action', compact('model'))->render();
         })

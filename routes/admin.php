@@ -22,6 +22,7 @@ Route::group(['middleware' => ['cekUserLogin:admin']], function(){
         Route::post('city', 'store');
         Route::get('city/{city}/edit', 'edit');
         Route::put('city/{city}', 'update');
+        Route::get('city/{city}', 'show');
         Route::get('/dataCity', [CityController::class, 'dataCity'])->name('dataCity');
     });
 

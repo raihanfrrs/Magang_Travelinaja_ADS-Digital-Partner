@@ -15,6 +15,9 @@
                                 <th scope="col" class="text-center">#</th>
                                 <th scope="col" class="text-center">Country</th>
                                 <th scope="col" class="text-center">Continent</th>
+                                <th scope="col" class="text-center">Population</th>
+                                <th scope="col" class="text-center">Territory</th>
+                                <th scope="col" class="text-center">Avg Price</th>
                                 <th scope="col" class="text-center">Action</th>
                             </tr>
                         </thead>
