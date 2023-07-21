@@ -15,7 +15,7 @@
                                 <th scope="col" class="text-center">#</th>
                                 <th scope="col" class="text-center">Country</th>
                                 <th scope="col" class="text-center">Continent</th>
-                                <th scope="col" class="text-center">Aksi</th>
+                                <th scope="col" class="text-center">Action</th>
                             </tr>
                         </thead>
                     </table>

@@ -24,4 +24,18 @@ $(document).ready(function () {
             { data: 'action', name: 'action', class: 'text-center' }
         ]
     });
+
+    $('#dataDeal').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '/dataDeal',
+        columns: [
+            { data: 'id', name: 'id', class: 'text-center' },
+            { data: 'city', name: 'city', class: 'text-center text-capitalize' },
+            { data: 'day', name: 'day', class: 'text-center' },
+            { data: 'price', name: 'price', class: 'text-center' },
+            { data: 'until', name: 'until', class: 'text-center' },
+            { data: 'action', name: 'action', class: 'text-center' }
+        ]
+    });
 });

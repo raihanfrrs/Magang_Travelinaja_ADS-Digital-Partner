@@ -51,12 +51,12 @@
                 <span class="hide-menu">Country</span>
             </a>
             </li>
-            <li class="sidebar-item {{ request()->is('deals', 'deals/*') ? 'selected' : '' }}">
-                <a class="sidebar-link {{ request()->is('deals', 'deals/*') ? 'active' : '' }}" href="/deals" aria-expanded="false">
+            <li class="sidebar-item {{ request()->is('deal', 'deal/*') ? 'selected' : '' }}">
+                <a class="sidebar-link {{ request()->is('deal', 'deal/*') ? 'active' : '' }}" href="/deal" aria-expanded="false">
                     <span>
                     <i class="ti ti-article"></i>
                     </span>
-                    <span class="hide-menu">Deals</span>
+                    <span class="hide-menu">Deal</span>
                 </a>
             </li>
 

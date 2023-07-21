@@ -5,30 +5,22 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title fw-semibold mb-4">Add City</h5>
+          <h5 class="card-title fw-semibold mb-4">Add Deals</h5>
           <div class="card">
             <div class="card-body">
-              <form action="/city" method="POST" enctype="multipart/form-data">
+              <form action="/deal" method="POST">
                 @csrf
 
                 <div class="mb-3">
-                  <label for="name" class="form-label">City</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" autocomplete="off" required>
-                  @error('name')
-                    <div class="form-text invalid-feedback">{{ $message }}</div>
-                  @enderror
-                </div>
-
-                <div class="mb-3">
-                  <label for="country_id" class="form-label">Country</label>
-                  <select name="country_id" id="country_id" class="form-control">
-                    @foreach ($countries as $country)
-                        <option value="{{ $country->id }}" {{ $country->id == old('country_id') ? 'selected' : '' }}>{{ $country->name }}</option>
-                    @endforeach
-                  </select>
-                  @error('country_id')
-                    <div class="form-text invalid-feedback">{{ $message }}</div>
-                  @enderror
+                    <label for="city_id" class="form-label">City</label>
+                    <select name="city_id" id="city_id" class="form-control">
+                      @foreach ($cities as $city)
+                          <option value="{{ $city->id }}" {{ $city->id == old('city_id') ? 'selected' : '' }}>{{ $city->name }}</option>
+                      @endforeach
+                    </select>
+                    @error('city_id')
+                      <div class="form-text invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
@@ -48,12 +40,11 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
-                    <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" required onchange="previewImage()">
-                    @error('image')
+                    <label for="until" class="form-label">Date Until</label>
+                    <input type="date" class="form-control @error('until') is-invalid @enderror" id="until" name="until" value="{{ old('until') }}" autocomplete="off" required>
+                    @error('until')
                       <div class="form-text invalid-feedback">{{ $message }}</div>
                     @enderror
-                    <img class="img-preview img-fluid d-block my-3">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

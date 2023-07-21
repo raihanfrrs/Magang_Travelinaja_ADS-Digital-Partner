@@ -17,7 +17,7 @@
                                 <th scope="col" class="text-center">Country</th>
                                 <th scope="col" class="text-center">Days</th>
                                 <th scope="col" class="text-center">Price</th>
-                                <th scope="col" class="text-center">Aksi</th>
+                                <th scope="col" class="text-center">Action</th>
                             </tr>
                         </thead>
                     </table>

@@ -1,11 +1,21 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DealController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['cekUserLogin:admin']], function(){
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('user', 'index');
+        Route::get('user/add', 'add');
+        Route::post('user', 'store');
+        Route::get('user/{user}/edit', 'edit');
+        Route::put('user/{user}', 'update');
+        Route::get('/dataUser', [AdminController::class, 'dataUser'])->name('dataUser');
+    });
+
     Route::controller(CityController::class)->group(function () {
         Route::get('city', 'index');
         Route::get('city/add', 'add');
@@ -25,11 +35,11 @@ Route::group(['middleware' => ['cekUserLogin:admin']], function(){
     });
 
     Route::controller(DealController::class)->group(function () {
-        Route::get('deals', 'index');
-        Route::get('deals/add', 'add');
-        Route::post('deals', 'store');
-        Route::get('deals/{deals}/edit', 'edit');
-        Route::put('deals/{deals}', 'update');
-        Route::get('/dataDeals', [DealController::class, 'dataDeals'])->name('dataDeals');
+        Route::get('deal', 'deal');
+        Route::get('deal/add', 'add');
+        Route::post('deal', 'store');
+        Route::get('deal/{deal}/edit', 'edit');
+        Route::put('deal/{deal}', 'update');
+        Route::get('/dataDeal', [DealController::class, 'dataDeal'])->name('dataDeal');
     });
 });

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(City::class);
             $table->integer('day')->nullable();
             $table->bigInteger('price')->nullable();
+            $table->date('until');
             $table->timestamps();
         });
     }
