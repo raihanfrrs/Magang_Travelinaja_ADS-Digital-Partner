@@ -8,7 +8,7 @@
                     </a>
                     <ul class="nav">
                         <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
-                        <li><a href="/about" class="{{ request()->is('about') ? 'active' : '' }}">About</a></li>
+                        <li><a href="/about" class="{{ request()->is('about', 'about/*') ? 'active' : '' }}">About</a></li>
                         <li><a href="/deals" class="{{ request()->is('deals') ? 'active' : '' }}">Deals</a></li>
                         <li><a href="/reservation" class="{{ request()->is('reservation') ? 'active' : '' }}">Reservation</a></li>
                         @guest

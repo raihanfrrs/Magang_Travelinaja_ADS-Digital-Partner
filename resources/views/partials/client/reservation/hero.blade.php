@@ -4,8 +4,7 @@
         <div class="col-lg-12">
           <h4>Book Prefered Deal Here</h4>
           <h2>Make Your Reservation</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uttersi labore et dolore magna aliqua is ipsum suspendisse ultrices gravida</p>
-          <div class="main-button"><a href="about.html">Discover More</a></div>
+          <p>Unlock a world of possibilities and secure your spot now for an unforgettable journey. Say goodbye to worries and embrace the joy of wanderlust.</p>
         </div>
       </div>
     </div>

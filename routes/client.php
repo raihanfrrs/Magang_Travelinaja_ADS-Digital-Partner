@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(AboutController::class)->group(function () {
     Route::get('about', 'index');
+    Route::get('about/{country}', 'show');
 });
 
 Route::controller(DealController::class)->group(function () {

@@ -5,21 +5,21 @@
           <div class="info-item">
             <i class="fa fa-phone"></i>
             <h4>Make a Phone Call</h4>
-            <a href="#">+123 456 789 (0)</a>
+            <a href="#">+62 81333903187</a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
           <div class="info-item">
             <i class="fa fa-envelope"></i>
             <h4>Contact Us via Email</h4>
-            <a href="#">company@email.com</a>
+            <a href="#">rehanfarras76@gmail.com</a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
           <div class="info-item">
             <i class="fa fa-map-marker"></i>
             <h4>Visit Our Offices</h4>
-            <a href="#">24th Street North Avenue London, UK</a>
+            <a href="#">Jl. Merdeka No. 123</a>
           </div>
         </div>
       </div>

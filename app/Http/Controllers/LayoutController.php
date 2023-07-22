@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +12,7 @@ class LayoutController extends Controller
     {
         if (!Auth::check() || auth()->user()->level == 'client') {
             return view('welcome-client', [
-                'data' => 'data'
+                'countries' => Country::all()
             ]);
         } elseif (auth()->user()->level == 'admin') {
             return view('welcome-admin');

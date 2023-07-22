@@ -13,7 +13,9 @@ class DealController extends Controller
 {
     public function index()
     {
-        return view('client.deals.index');
+        return view('client.deals.index', [
+            'deals' => Deal::all()
+        ]);
     }
 
     public function deal()
