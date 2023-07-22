@@ -29,7 +29,7 @@
               <div class="col-lg-6">
                 <fieldset>
                   <label for="guest" class="form-label">Number of Guests</label>
-                  <input type="number" name="guest" id="guest" class="Number @error('guest') is-invalid @enderror" placeholder="Ex. 10" required value="{{ old('guest') }}">
+                  <input type="number" name="guest" id="guest" min="1" class="Number @error('guest') is-invalid @enderror" placeholder="Ex. 10" required value="{{ old('guest') }}">
                 </fieldset>
               </div>
               <div class="col-lg-6">
@@ -43,14 +43,14 @@
                       <label for="city_id" class="form-label">Choose Your Destination</label>
                       <select name="city_id" class="form-select" aria-label="Default select example" id="city_id" onChange="this.form.click()">
                         @foreach ($cities as $city)
-                          <option value="{{ $city->id }}">{{ $city->country->name }}, {{ $city->name }}</option>
+                          <option value="{{ $city->id }}" {{ old('city_id', isset($cited->id) ? $cited->id : '') == $city->id ? 'selected' : '' }}>{{ $city->country->name }}, {{ $city->name }}</option>
                         @endforeach
                       </select>
                   </fieldset>
               </div>
               <div class="col-lg-12">                        
                   <fieldset>
-                      <button class="main-button">Make Your Reservation Now</button>
+                      <button type="submit" class="main-button">Make Your Reservation Now</button>
                   </fieldset>
               </div>
             </div>

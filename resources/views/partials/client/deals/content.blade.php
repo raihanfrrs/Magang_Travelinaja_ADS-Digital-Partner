@@ -33,7 +33,7 @@
                     </div>
                   </div>
                   <div class="main-button mt-4">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="/reservation/{{ $deal->city->slug }}">Make a Reservation</a>
                   </div>
                 </div>
               </div>

@@ -28,7 +28,7 @@
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="/reservation/{{ $city->slug }}">Make a Reservation</a>
                   </div>
                 </div>
               </div>

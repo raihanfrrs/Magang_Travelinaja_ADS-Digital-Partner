@@ -1,4 +1,4 @@
-@if (!request()->is('reservation'))
+@if (!request()->is('reservation', 'reservation/*'))
 <div class="call-to-action">
     <div class="container">
       <div class="row">
@@ -8,7 +8,7 @@
         </div>
         <div class="col-lg-4">
           <div class="border-button">
-            <a href="/">Book Yours Now</a>
+            <a href="/reservation">Book Yours Now</a>
           </div>
         </div>
       </div>
