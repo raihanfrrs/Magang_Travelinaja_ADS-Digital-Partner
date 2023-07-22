@@ -12,7 +12,8 @@ class LayoutController extends Controller
     {
         if (!Auth::check() || auth()->user()->level == 'client') {
             return view('welcome-client', [
-                'countries' => Country::all()
+                'countries' => Country::all(),
+                'heros' => Country::limit(4)->get()
             ]);
         } elseif (auth()->user()->level == 'admin') {
             return view('welcome-admin');

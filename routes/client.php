@@ -15,6 +15,9 @@ Route::controller(DealController::class)->group(function () {
     Route::get('deals', 'index');
 });
 
-Route::controller(ReservationController::class)->group(function () {
-    Route::get('reservation', 'index');
+Route::middleware('auth')->group(function () {
+    Route::controller(ReservationController::class)->group(function () {
+        Route::get('reservation', 'index');
+        Route::post('reservation', 'store');
+    });
 });

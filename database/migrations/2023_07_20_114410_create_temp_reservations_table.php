@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('email');
             $table->integer('guest');
             $table->bigInteger('grand_total');
+            $table->date('check_in');
+            $table->timestamps();
         });
     }
 

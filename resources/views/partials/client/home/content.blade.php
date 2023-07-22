@@ -32,7 +32,7 @@
                         <ul class="info">
                           <li><i class="fa fa-user"></i> {{ $country->population }} Mil People</li>
                           <li><i class="fa fa-globe"></i> {{ $country->territory }} km2</li>
-                          <li><i class="fa fa-home"></i> @rupiah($country->price)</li>
+                          <li><i class="fa fa-home"></i> @rupiah($country->avg_price)</li>
                         </ul>
                       </div>
                     </div>

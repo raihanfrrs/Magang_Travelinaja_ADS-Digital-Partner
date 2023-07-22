@@ -15,25 +15,24 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="image">
-                  <img src="assets/images/deals-01.jpg" alt="">
+                  <img src="{{ asset('storage/' . $deal->city->image) }}" alt="" style="height: 300px">
                 </div>
               </div>
               <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <span class="info">*Limited Offer Today</span>
-                  <h4>Glasgow City Lorem</h4>
+                  <span class="info">*Limited Offer Until {{ \Carbon\Carbon::parse($deal->until)->format('d/m/Y') }}</span>
+                  <h4>{{ $deal->city->name }}</h4>
                   <div class="row">
                     <div class="col-6">
                       <i class="fa fa-clock"></i>
-                      <span class="list">5 Days</span>
+                      <span class="list">{{ $deal->day }} Days</span>
                     </div>
                     <div class="col-6">
-                      <i class="fa fa-map"></i>
-                      <span class="list">Daily Places</span>
+                      <i class="bi bi-cash-stack"></i>
+                      <span class="list">@rupiah($deal->price)</span>
                     </div>
                   </div>
-                  <p>Lorem ipsum dolor sit amet dire consectetur adipiscing elit.</p>
-                  <div class="main-button">
+                  <div class="main-button mt-4">
                     <a href="reservation.html">Make a Reservation</a>
                   </div>
                 </div>

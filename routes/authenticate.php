@@ -13,7 +13,7 @@ Route::controller(LayoutController::class)->group(function () {
 
 Route::middleware('guest')->group(function () {
     Route::controller(LoginController::class)->group(function () {
-        Route::get('sign-in', 'index');
+        Route::get('sign-in', 'index')->name('sign-in');
         Route::post('sign-in', 'cekLogin');
     });
 

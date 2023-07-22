@@ -11,6 +11,7 @@
     <!-- VENDOR CSS -->
     <link href="{{ asset('vendor/sweetalert2/css/sweetalert2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/swiper/css/unpkg.com_swiper@7.4.1_swiper-bundle.min.css') }}" rel="stylesheet">
 
     <!-- MAIN CSS -->
