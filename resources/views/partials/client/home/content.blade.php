@@ -40,7 +40,7 @@
                 </div>
               </div>
               @endforeach
-              @if ($countries->count() > 0)
+              {{-- @if ($countries->count() > 0)
               <div class="col-lg-12">
                 <ul class="page-numbers">
                   <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
@@ -50,7 +50,7 @@
                   <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
                 </ul>
               </div>
-              @endif
+              @endif --}}
             </div>
           </div>
         </div>

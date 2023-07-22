@@ -54,4 +54,20 @@ $(document).ready(function () {
             { data: 'action', name: 'action', class: 'text-center' }
         ]
     });
+
+    $('#dataReservation').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '/dataReservation',
+        columns: [
+            { data: 'id', name: 'id', class: 'text-center' },
+            { data: 'name', name: 'name', class: 'text-center text-capitalize' },
+            { data: 'city', name: 'city', class: 'text-center text-capitalize' },
+            { data: 'phone', name: 'phone', class: 'text-center' },
+            { data: 'email', name: 'email', class: 'text-center' },
+            { data: 'guest', name: 'guest', class: 'text-center' },
+            { data: 'grand_total', name: 'grand_total', class: 'text-center' },
+            { data: 'until', name: 'until', class: 'text-center' }
+        ]
+    });
 });

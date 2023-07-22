@@ -65,14 +65,6 @@
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">REPORTING</span>
             </li>
-            <li class="sidebar-item {{ request()->is('reporting/sales', 'reporting/sales/*') ? 'selected' : '' }}">
-                <a class="sidebar-link {{ request()->is('reporting/sales', 'reporting/sales/*') ? 'active' : '' }}" href="/reporting/sales" aria-expanded="false">
-                    <span>
-                    <i class="ti ti-file-description"></i>
-                    </span>
-                    <span class="hide-menu">Sales</span>
-                </a>
-            </li>
             <li class="sidebar-item {{ request()->is('reporting/reservation', 'reporting/reservation/*') ? 'selected' : '' }}">
                 <a class="sidebar-link {{ request()->is('reporting/reservation', 'reporting/reservation/*') ? 'active' : '' }}" href="/reporting/reservation" aria-expanded="false">
                     <span>

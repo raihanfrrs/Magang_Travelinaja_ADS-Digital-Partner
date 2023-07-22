@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Deal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
@@ -134,6 +135,8 @@ class CityController extends Controller
     {
         try {
             $city->delete();
+
+            Deal::where('city_id', $city->id)->delete();
         
             return redirect()->intended('/city')->with([
                 'flash-type' => 'sweetalert',

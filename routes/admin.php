@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DealController;
+use App\Http\Controllers\ReportingController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['cekUserLogin:admin']], function(){
@@ -46,5 +47,10 @@ Route::group(['middleware' => ['cekUserLogin:admin']], function(){
         Route::get('deal/{deal}/edit', 'edit');
         Route::put('deal/{deal}', 'update');
         Route::get('/dataDeal', [DealController::class, 'dataDeal'])->name('dataDeal');
+    });
+
+    Route::controller(ReportingController::class)->group(function () {
+        Route::get('reporting/reservation', 'reservation_index');
+        Route::get('/dataReservation', [ReportingController::class, 'dataReservation'])->name('/dataReservation');
     });
 });

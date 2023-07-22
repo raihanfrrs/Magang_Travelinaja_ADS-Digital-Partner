@@ -39,7 +39,7 @@
                               <td>@rupiah($checkout->grand_total)</td>
                             </tr>
                             <tr>
-                              <th>Check-in Date:</th>
+                              <th>Check-in:</th>
                               <td>{{ \Carbon\Carbon::parse($checkout->check_in)->format('d/m/Y') }}</td>
                             </tr>
                         </table>

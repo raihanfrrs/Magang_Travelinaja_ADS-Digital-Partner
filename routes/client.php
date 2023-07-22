@@ -16,12 +16,15 @@ Route::controller(DealController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::controller(ReservationController::class)->group(function () {
-        Route::get('reservation', 'index');
-        Route::get('reservation/{city}', 'show');
-        Route::post('reservation', 'store');
-        Route::get('reservation/checkout/{checkout}', 'checkout');
-        Route::put('reservation/checkout/{checkout}', 'payment');
-        Route::get('reservation/checkout/{checkout}/invoice', 'invoice');
+    Route::group(['middleware' => ['cekUserLogin:client']], function(){
+        Route::controller(ReservationController::class)->group(function () {
+            Route::get('reservation', 'index');
+            Route::get('reservation/{city}', 'show');
+            Route::get('reservation/{city}/deal', 'show_deal');
+            Route::post('reservation', 'store');
+            Route::get('reservation/checkout/{checkout}', 'checkout');
+            Route::put('reservation/checkout/{checkout}', 'payment');
+            Route::get('reservation/checkout/{checkout}/invoice', 'invoice');
+        });
     });
 });

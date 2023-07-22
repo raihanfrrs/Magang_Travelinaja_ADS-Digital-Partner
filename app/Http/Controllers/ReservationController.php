@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+use App\Models\Deal;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Models\TempReservation;
@@ -31,6 +32,17 @@ class ReservationController extends Controller
         }
     }
 
+    public function show_deal(City $city)
+    {
+        if (Auth::check()) {
+            return view('client.reservation.index', [
+                'cities' => City::all(),
+                'cited' => $city,
+                'deal' => 'deal'
+            ]);
+        }
+    }
+
     public function store(Request $request)
     {
         try {
@@ -45,14 +57,23 @@ class ReservationController extends Controller
 
             $validatedData = Validator::make($request->all(), $rules)->validate();
 
-            $city = City::where('id', $request->city_id)->first();
+            if (isset($request->deal)) {
+                if ($request->deal == $request->city_id) {
+                    $deal = Deal::where('city_id', $request->city_id)->first();
 
-            $validatedData['user_id'] = auth()->user()->id;
-            $validatedData['grand_total'] = $city->price * $request->guest;
+                    $validatedData['user_id'] = auth()->user()->id;
+                    $validatedData['grand_total'] = $deal->price * $request->guest;
+                }
+            } else {
+                $city = City::where('id', $request->city_id)->first();
 
-            TempReservation::create($validatedData);
+                $validatedData['user_id'] = auth()->user()->id;
+                $validatedData['grand_total'] = $city->price * $request->guest;
+            }
 
-            return redirect('/reservation/checkout')->with([
+            $temp = TempReservation::create($validatedData);
+
+            return redirect('/reservation/checkout/'.$temp->id)->with([
                 'flash-type' => 'sweetalert',
                 'case' => 'default',
                 'position' => 'center',

@@ -8,6 +8,10 @@
               <div class="col-lg-12">
                 <h4>Make Your <em>Reservation</em> Through This <em>Form</em></h4>
               </div>
+
+              @if (isset($deal))
+                <input type="hidden" value="{{ $cited->id }}">
+              @endif
               <div class="col-lg-6">
                   <fieldset>
                       <label for="name" class="form-label">Your Name</label>
